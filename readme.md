@@ -8,9 +8,6 @@ Para el examen se propone crear un catálogo de pelíclas que se mostrarán en u
 ## Datos del estudiante
 <<<<<<< HEAD
 - [Alan Yandun]
-=======
-- [Alan Javier Yandun Ayala]
->>>>>>> b738a22 (Fix .gitignore and remove .venv and pycache from repo)
 
 ## Objetivos 
 
