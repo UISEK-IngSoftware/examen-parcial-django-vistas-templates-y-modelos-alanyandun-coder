@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ site_title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #222;
+            color: #fff;
+            padding: 16px;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 24px auto;
+            background-color: #fff;
+            padding: 16px 24px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin-top: 0;
+        }
+        .field-label {
+            font-weight: bold;
+        }
+        .back-link {
+            margin-top: 16px;
+            display: inline-block;
+        }
+        .back-link a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Movie Library</h1>
+</header>
+
+<main>
+    <h2>{{ movie.title }}</h2>
+    {% if movie.image_url %}
+    <img src="{{ movie.image_url }}" alt="{{ movie.title }}" style="max-width: 200px; display:block; margin-bottom:16px;">
+{% endif %}
+
+
+    <p><span class="field-label">Género:</span> {{ movie.genre }}</p>
+    <p><span class="field-label">Director:</span> {{ movie.director_name }}</p>
+    <p><span class="field-label">Año de publicación:</span> {{ movie.publication_year }}</p>
+    <p><span class="field-label">Sinopsis:</span></p>
+<p>{{ movie.synopsis }}</p>
+
+    <div class="back-link">
+        <a href="{% url 'movies:movie_list' %}">← Volver al listado</a>
+    </div>
+</main>
+</body>
+</html>
